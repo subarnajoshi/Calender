@@ -1,0 +1,120 @@
+.calendar {
+  width: 350px;
+  height: 400px;
+  background: white;
+  border: 1px solid #ccc; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+
+
+  .calendar-header-section {
+    border-radius: 10px 10px 0 0;
+    background-color: #f5f5f5;
+  }
+
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 15px;
+    border-radius: 8px;
+
+    h2 {
+      margin: 0;
+      font-size: 1.4rem;
+      color: #333;
+      font-weight: 600;
+    }
+
+    button {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: #666;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+    }
+  }
+
+  .calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+    padding: 10px;
+    border-radius: 8px;
+
+    .weekday {
+      text-align: center;
+      font-weight: 600;
+      color: #333;
+      font-size: 1rem;
+    }
+  }
+
+  .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+    flex: 1;
+    min-height: 0;
+
+    .calendar-day {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+      color: #333;
+      position: relative;
+      user-select: none;
+      min-height: 0;
+      aspect-ratio: 1;
+      width: 35px;
+      height: 35px;
+      margin: 0 auto;
+
+      &:hover:not(.disabled) {
+        background-color: #f0f0f0;
+      }
+
+      &.selected {
+        background-color: #28a745;
+        color: white;
+      }
+
+      &.today {
+        background-color: #6c757d;
+        color: white;
+        font-weight: bold;
+      }
+
+      &.disabled {
+        color: #999;
+        cursor: not-allowed;
+        background-color: white;
+        opacity: 0.5;
+      }
+
+      &.empty {
+        background-color: transparent;
+        cursor: default;
+      }
+    }
+  }
+} 

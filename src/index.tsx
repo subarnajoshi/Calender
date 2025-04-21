@@ -3,28 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
-import { green } from '@mui/material/colors';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-const theme = createTheme({
-  palette: {
-    mode: 'light',
-    primary: {
-      main: green['A400'],
-    }
-  },
-});
 
 root.render(
   <React.StrictMode>
-   <ThemeProvider theme={theme}>
-    <CssBaseline />
     <App />
-  </ThemeProvider>
   </React.StrictMode>
 );
 
