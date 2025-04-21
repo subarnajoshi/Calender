@@ -6,7 +6,7 @@ const Calendar = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   useEffect(() => {
-    // Set today's date as selected when component mounts
+    // set today's date as selected date
     const today = new Date();
     setSelectedDate(today);
   }, []);
@@ -80,6 +80,7 @@ const Calendar = () => {
       
       days.push(
         <div
+          role="button"
           key={`day-${day}`}
           className={`calendar-day ${isSelected ? 'selected' : ''} ${isDisabled ? 'disabled' : ''} ${isCurrentDay ? 'today' : ''}`}
           onClick={() => handleDateClick(day)}

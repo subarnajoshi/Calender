@@ -4,7 +4,7 @@ import Calendar from './Component/Calendar';
 
 function App() {
   return (
-    <div className='home-container'>
+    <div className='home-container' role="application">
     <Calendar/>
     </div>
   );
